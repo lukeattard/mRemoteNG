@@ -38,8 +38,8 @@ namespace mRemoteNG.UI.Window
             {
                 formText = Language.strNewPanel;
             }
-
-            WindowType = WindowType.Connection;
+            FormBorderStyle = FormBorderStyle.Sizable;
+            
             DockPnl = panel;
             InitializeComponent();
             SetEventHandlers();
@@ -201,6 +201,9 @@ namespace mRemoteNG.UI.Window
                 }
                 DockHandler.FloatPane.FloatWindow.ResizeBegin += Connection_ResizeBegin;
                 DockHandler.FloatPane.FloatWindow.ResizeEnd += Connection_ResizeEnd;
+                DockHandler.FloatPane.FloatWindow.FormBorderStyle = FormBorderStyle.Sizable;
+                DockHandler.FloatPane.FloatWindow.ShowInTaskbar = true;
+                DockHandler.FloatPane.FloatWindow.DoubleClickTitleBarToDock = false;
                 _floatHandlersAdded = true;
             }
             else if (DockState == DockState.Document)
